@@ -1,0 +1,21 @@
+flowchart TD
+    A[Seller/Developer makes first contact] --> B{Which region?}
+    B -->|Region 1| C1[Advisor uses Region 1 spreadsheet form]
+    B -->|Region 2| C2[Advisor uses Region 2 spreadsheet form]
+    B -->|Region 3| C3[Advisor uses Region 3 spreadsheet form]
+    C1 --> D[Advisor emails completed form to Onboarding Ops]
+    C2 --> D
+    C3 --> D
+    D --> E{Ops reviews submission}
+    E -->|Fields missing or inconsistent| F[Ops emails advisor for clarification]
+    F --> C1
+    E -->|Looks complete| G[Ops manually re-keys data into shared system]
+    G --> H{Re-keying introduces mismatch vs. platform field definitions}
+    H -->|Yes| F
+    H -->|No| I[Listing/profile published to buyer platform]
+    I --> J[Recommendation engine uses profile fields to match buyers]
+    J --> K[Sales advisors report mismatched or low-quality buyer matches]
+
+    style F fill:#f8d7da,stroke:#b02a37
+    style H fill:#f8d7da,stroke:#b02a37
+    style K fill:#f8d7da,stroke:#b02a37

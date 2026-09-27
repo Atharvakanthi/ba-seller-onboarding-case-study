@@ -1,0 +1,18 @@
+flowchart TD
+    A[Seller/Developer makes first contact] --> B[Advisor or seller opens single unified onboarding form]
+    B --> C[Form applies one shared variable dictionary regardless of region]
+    C --> D{Required fields validated inline}
+    D -->|Missing/invalid field| E[Form flags field immediately with plain-language guidance]
+    E --> C
+    D -->|All required fields valid| F[Submission auto-routes into shared onboarding system]
+    F --> G[Ops performs lightweight quality spot-check, not full re-keying]
+    G --> H{Spot-check passes}
+    H -->|No, rare edge case| I[Ops resolves directly with seller/advisor via in-form comment]
+    I --> G
+    H -->|Yes| J[Profile auto-published to buyer platform]
+    J --> K[Recommendation engine consumes standardized fields]
+    K --> L[Data & Analytics Lead tracks KPI dashboard: completion, time-to-list, match accuracy]
+
+    style D fill:#d1e7dd,stroke:#146c43
+    style F fill:#d1e7dd,stroke:#146c43
+    style J fill:#d1e7dd,stroke:#146c43
